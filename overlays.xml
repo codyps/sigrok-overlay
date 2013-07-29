@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		contact = "jmesmon@gmail.com"
+		type = "git"
+		src  = "git://github.com/jmesmon/sigrok-overlay.git"
+		name = "sigrok">
+		<link>http://github.com/jmesmon/sigrok-overlay</link>
+		<description>Ebuilds for sigrok</description>
+	</overlay>
+</layman>
+

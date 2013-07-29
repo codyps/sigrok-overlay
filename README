@@ -1,0 +1,3 @@
+* Adding with layman:
+
+  layman -f -a sigrok -o http://raw.github.com/jmesmon/sigrok-overlay/master/overlays.xml
