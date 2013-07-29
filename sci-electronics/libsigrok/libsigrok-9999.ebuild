@@ -4,19 +4,20 @@
 
 EAPI=4
 
-inherit eutils git-2 autotools
-
-DESCRIPTION="Library which provides the basic hardware access drivers for logic analyzers, as
-well as input/output file format support."
-HOMEPAGE="http://sigrok.org/"
+inherit eutils autotools
 
 if [ ${PV} = 9999 ]; then
+	inherit git-2
 	EGIT_REPO_URI="git://sigrok.org/libsigrok"
 	KEYWORDS=""
 else
 	SRC_URI="http://sigrok.org/download/source/${PN}/${P}.tar.gz"
 	KEYWORDS="~amd64"
 fi
+
+DESCRIPTION="Library which provides the basic hardware access drivers for logic analyzers, as
+well as input/output file format support."
+HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
 SLOT="0"
