@@ -34,7 +34,7 @@ RDEPEND=">=dev-libs/glib-2.32.0
 	udev? ( >=virtual/udev-151 )"
 
 DEPEND="${RDEPEND}
-	>=pkg-config-0.22"
+	>=dev-util/pkgconfig-0.22"
 
 if [ ${PV} = 9999 ]; then
 src_prepare() {
