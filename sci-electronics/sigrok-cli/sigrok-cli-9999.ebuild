@@ -17,8 +17,6 @@ fi
 
 DESCRIPTION="Command-line client for the sigrok logic analyzer software"
 HOMEPAGE="http://sigrok.org/"
-SRC_URI=""
-EGIT_REPO_URI="git://sigrok.org/sigrok-cli"
 
 LICENSE="GPL-3"
 SLOT="0"
