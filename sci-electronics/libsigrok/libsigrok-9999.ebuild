@@ -21,7 +21,7 @@ HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="udev alsa usb ftdi"
+IUSE="+udev +alsa +usb +ftdi"
 
 # Not encoded in RDEPEND because the virtual doesn't know about versions.
 # >=dev-libs/libusb-1.0.9
