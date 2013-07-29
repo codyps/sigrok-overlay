@@ -15,7 +15,7 @@ else
 	KEYWORDS="~amd64"
 fi
 
-DESCRIPTION="firmware for sigrok to use the asix-sigma and nexus-osciprime"
+DESCRIPTION="firmware for sigrok to use Cypress FX2 based devices such as Salae Logic"
 HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-2+"
