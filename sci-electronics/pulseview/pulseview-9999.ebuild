@@ -4,17 +4,19 @@
 
 EAPI=4
 
-inherit eutils git-2 autotools
+inherit eutils git-2 cmake-utils
 
-DESCRIPTION="Command-line client for the sigrok logic analyzer software"
+DESCRIPTION="a Qt based logic analyzer GUI for sigrok."
 HOMEPAGE="http://sigrok.org/"
 SRC_URI=""
-EGIT_REPO_URI="git://sigrok.org/sigrok-cli"
+EGIT_REPO_URI="git://sigrok.org/pulseview"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE="decode"
+
+CMAKE_MIN_VERSION=2.6
 
 # >=automake-1.11
 # >=autoconf-2.63
@@ -26,6 +28,10 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eautoreconf
+}
+
+src_configure () {
+
 }
 
 src_install() {
