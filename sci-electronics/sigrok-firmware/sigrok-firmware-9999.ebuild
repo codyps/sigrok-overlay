@@ -18,7 +18,7 @@ fi
 DESCRIPTION="firmware for sigrok to use the asix-sigma and nexus-osciprime"
 HOMEPAGE="http://sigrok.org/"
 
-LICENSE="as-is"
+LICENSE="GPL-2 sigma"
 SLOT="0"
 IUSE=""
 
