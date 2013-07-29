@@ -22,10 +22,10 @@ HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+decode"
+IUSE="+sigrokdecode"
 
 RDEPEND=">=sci-electronics/libsigrok-0.2.0
-	decode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
+	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
 	>=dev-libs/glib-2.28.0"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"

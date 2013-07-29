@@ -6,8 +6,8 @@
   * libsigrok
   * libsigrokdecode
   * sigrok-cli
-* Todo
   * pulseview
+* Todo
   * sigrok-firmware
   * sigrok-meter
   * gpibgrok
