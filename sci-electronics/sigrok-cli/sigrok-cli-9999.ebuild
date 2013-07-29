@@ -4,6 +4,8 @@
 
 EAPI=4
 
+WANT_AUTOCONF="latest" # 2.63 or newer
+WANT_AUTOMAKE="latest" # 1.11 or newer
 inherit eutils autotools
 
 if [ ${PV} = 9999 ]; then
@@ -22,8 +24,6 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="+decode"
 
-# >=automake-1.11
-# >=autoconf-2.63
 RDEPEND=">=sci-electronics/libsigrok-0.2.0
 	decode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
 	>=dev-libs/glib-2.28.0"
