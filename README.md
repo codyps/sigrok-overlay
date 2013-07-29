@@ -7,10 +7,10 @@
   * libsigrokdecode
   * sigrok-cli
   * pulseview
-* Todo
   * sigrok-firmware
+  * sigrok-firmware-fx2lafw
+* Todo
   * sigrok-meter
-  * gpibgrok
-  * fx2grok
   * fpgalafw
+  * meta package
 
