@@ -10,8 +10,11 @@ DESCRIPTION="Library which provides the basic hardware access drivers for logic 
 well as input/output file format support."
 HOMEPAGE="http://sigrok.org/"
 
-SRC_URI=""
-EGIT_REPO_URI="git://sigrok.org/libsigrok"
+if [ ${PV} = 9999 ]; then
+	EGIT_REPO_URI="git://sigrok.org/libsigrok"
+else
+	SRC_URI="https://http://sigrok.org/download/source/${PN}/${P}.tar.bz2"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"
