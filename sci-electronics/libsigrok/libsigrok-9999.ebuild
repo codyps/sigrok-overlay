@@ -14,7 +14,7 @@ if [ ${PV} = 9999 ]; then
 	EGIT_REPO_URI="git://sigrok.org/libsigrok"
 	KEYWORDS=""
 else
-	SRC_URI="https://http://sigrok.org/download/source/${PN}/${P}.tar.bz2"
+	SRC_URI="http://sigrok.org/download/source/${PN}/${P}.tar.gz"
 	KEYWORDS="~amd64"
 fi
 
@@ -22,19 +22,25 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="udev alsa usb ftdi"
 
-# libusb >= 1.0.9
-DEPEND=">=dev-libs/glib-2.32.0
+# Not encoded in RDEPEND because the virtual doesn't know about versions.
+# >=dev-libs/libusb-1.0.9
+
+RDEPEND=">=dev-libs/glib-2.32.0
 	>=dev-libs/libzip-0.8
 	>=dev-libs/check-0.9.4
 	usb?  ( virtual/libusb:1 )
 	ftdi? ( >=dev-embedded/libftdi-0.16 )
 	alsa? ( >=media-libs/alsa-lib-1.0 )
 	udev? ( >=virtual/udev-151 )"
-RDEPEND="${DEPEND}"
 
+DEPEND="${RDEPEND}
+	>=pkg-config-0.22"
+
+if [ ${PV} = 9999 ]; then
 src_prepare() {
-	eautoreconf
+		eautoreconf
 }
+fi
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
