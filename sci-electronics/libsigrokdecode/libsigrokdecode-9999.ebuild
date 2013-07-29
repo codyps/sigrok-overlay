@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,8 @@ IUSE=""
 RDEPEND=">=dev-libs/glib-2.24.0
 	>=dev-lang/python-3"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.22"
+	virtual/pkgconfig"
+#	>=dev-util/pkgconfig-0.22"
 
 if [ ${PV} = 9999 ]; then
 src_prepare() {

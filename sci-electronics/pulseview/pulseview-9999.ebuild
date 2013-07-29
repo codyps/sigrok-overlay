@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,11 +29,8 @@ RDEPEND=">=sci-electronics/libsigrok-0.2.0
 	decode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
 	>=dev-libs/glib-2.28.0"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.22"
-
-src_configure () {
-
-}
+	virtual/pkgconfig"
+#	>=dev-util/pkgconfig-0.22
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"

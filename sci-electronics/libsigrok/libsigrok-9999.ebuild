@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,8 +15,7 @@ else
 	KEYWORDS="~amd64"
 fi
 
-DESCRIPTION="Library which provides the basic hardware access drivers for logic analyzers, as
-well as input/output file format support."
+DESCRIPTION="provide basic hardwar drivers for logic analyzers and input/output file format support"
 HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
@@ -35,7 +34,8 @@ RDEPEND=">=dev-libs/glib-2.32.0
 	udev? ( >=virtual/udev-151 )"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.22"
+	virtual/pkgconfig"
+#	>=dev-util/pkgconfig-0.22
 
 if [ ${PV} = 9999 ]; then
 src_prepare() {

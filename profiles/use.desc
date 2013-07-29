@@ -1,1 +1,2 @@
 decode Enable use of libsigrokdecode to decode protocols
+ftdi Use libftdi to communicate with FTDI devices
