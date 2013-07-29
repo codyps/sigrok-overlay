@@ -12,13 +12,14 @@ HOMEPAGE="http://sigrok.org/"
 
 if [ ${PV} = 9999 ]; then
 	EGIT_REPO_URI="git://sigrok.org/libsigrok"
+	KEYWORDS=""
 else
 	SRC_URI="https://http://sigrok.org/download/source/${PN}/${P}.tar.bz2"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
 IUSE="udev alsa usb ftdi"
 
 # libusb >= 1.0.9
