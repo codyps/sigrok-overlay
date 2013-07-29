@@ -18,7 +18,7 @@ fi
 DESCRIPTION="firmware for sigrok to use the asix-sigma and nexus-osciprime"
 HOMEPAGE="http://sigrok.org/"
 
-LICENSE="GPL-3"
+LICENSE="as-is"
 SLOT="0"
 IUSE=""
 
@@ -30,7 +30,3 @@ src_prepare() {
 		eautoreconf
 }
 fi
-
-#src_install() {
-#	emake DESTDIR="${D}" install || die "Install failed"
-#}
