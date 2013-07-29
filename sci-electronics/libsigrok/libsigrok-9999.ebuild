@@ -15,7 +15,7 @@ else
 	KEYWORDS="~amd64"
 fi
 
-DESCRIPTION="provide basic hardwar drivers for logic analyzers and input/output file format support"
+DESCRIPTION="provide basic hardware drivers for logic analyzers and input/output file format support"
 HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
