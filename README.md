@@ -1,6 +1,6 @@
 * Adding with layman:
 
-  layman -f -a sigrok -o http://raw.github.com/jmesmon/sigrok-overlay/master/overlays.xml
+  layman -a sigrok
 
   See http://wiki.gentoo.org/wiki/Layman for info on using layman.
 
