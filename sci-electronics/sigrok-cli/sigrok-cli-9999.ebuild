@@ -9,8 +9,8 @@ EAPI=4
 inherit eutils autotools
 
 if [ ${PV} = 9999 ]; then
-	inherit git-2
 	EGIT_REPO_URI="git://sigrok.org/${PN}"
+	inherit git-2
 	KEYWORDS=""
 else
 	SRC_URI="http://sigrok.org/download/source/${PN}/${P}.tar.gz"
@@ -31,8 +31,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 # >=dev-util/pkgconfig-0.22
 
-if [ ${PV} = 9999 ]; then
 src_prepare() {
-	eautoreconf
+	if [ ${PV} = 9999 ]; then
+		eautoreconf
+	fi
 }
-fi
