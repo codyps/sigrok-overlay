@@ -12,6 +12,7 @@
   * sigrok-firmware
   * sigrok-firmware-fx2lafw
 * Todo
+  * fx2lafw-bin
   * sigrok-meter
   * fpgalafw
   * meta package
