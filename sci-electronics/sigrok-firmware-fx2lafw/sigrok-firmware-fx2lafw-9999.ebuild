@@ -24,7 +24,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	dev-embedded/sdcc"
+	>=dev-embedded/sdcc-2.9.0"
 
 if [ ${PV} = 9999 ]; then
 src_prepare() {
