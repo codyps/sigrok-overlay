@@ -11,6 +11,7 @@
   * pulseview
   * sigrok-firmware
   * sigrok-firmware-fx2lafw
+  * sigrok-firmware-fx2lafw-bin
 * Todo
   * sigrok-meter
   * fpgalafw
