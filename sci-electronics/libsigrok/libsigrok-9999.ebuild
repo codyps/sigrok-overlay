@@ -25,7 +25,9 @@ IUSE="+udev +alsa +usb +ftdi"
 # Not encoded in RDEPEND because the virtual doesn't know about versions.
 # >=dev-libs/libusb-1.0.9
 
-RDEPEND=">=dev-libs/glib-2.32.0
+RDEPEND="
+	dev-libs/libserialport
+	>=dev-libs/glib-2.32.0
 	>=dev-libs/libzip-0.8
 	>=dev-libs/check-0.9.4
 	usb?  ( virtual/libusb:1 )

@@ -1,1 +1,1 @@
-libsigrok-9999.ebuild
+libsigrok-0.2.1.ebuild
