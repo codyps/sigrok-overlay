@@ -12,6 +12,7 @@
   * sigrok-firmware
   * sigrok-firmware-fx2lafw
   * sigrok-firmware-fx2lafw-bin
+  * libserialport
 * Todo
   * sigrok-meter
   * fpgalafw
