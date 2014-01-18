@@ -26,7 +26,8 @@ IUSE=""
 RDEPEND=">=dev-libs/glib-2.24.0
 	>=dev-lang/python-3"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	=sci-electronics/libsigrok-${PV}"
 #	>=dev-util/pkgconfig-0.22"
 
 src_prepare() {
