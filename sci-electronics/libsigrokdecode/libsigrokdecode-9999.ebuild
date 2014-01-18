@@ -34,3 +34,11 @@ src_prepare() {
 		eautoreconf
 	fi
 }
+
+src_configure() {
+	local py3ver
+
+	py3ver="$(python3 -V 2>&1 | sed -e 's/Python\ //' -e 's/\([0-9]\+\.[0-9]\+\).*/\1/')"
+
+	PYTHON3_CONFIG=python-config-${py3ver} econf
+}
