@@ -38,7 +38,7 @@ src_configure() {
 	# TODO: test support via ENABLE_TESTS
 	local mycmakeargs=(
 		-DDISABLE_WERROR=TRUE
-		$(cmake-utils_use_enable sigrokdecode)
+		$(cmake-utils_use_enable sigrokdecode DECODE)
 	)
 	if use static; then
 		mycmakeargs+=( -DSTATIC_PKGDEPS_LIBS=TRUE )
