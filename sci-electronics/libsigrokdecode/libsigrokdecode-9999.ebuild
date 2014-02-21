@@ -26,11 +26,20 @@ IUSE=""
 RDEPEND=">=dev-libs/glib-2.24.0
 	>=dev-lang/python-3"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	=sci-electronics/libsigrok-${PV}"
 #	>=dev-util/pkgconfig-0.22"
 
 src_prepare() {
 	if [ ${PV} = 9999 ]; then
 		eautoreconf
 	fi
+}
+
+src_configure() {
+	local py3ver
+
+	py3ver="$(python3 -V 2>&1 | sed -e 's/Python\ //' -e 's/\([0-9]\+\.[0-9]\+\).*/\1/')"
+
+	PYTHON3_CONFIG=python-config-${py3ver} econf
 }
