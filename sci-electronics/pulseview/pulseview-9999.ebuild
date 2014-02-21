@@ -28,7 +28,7 @@ CMAKE_MIN_VERSION=2.6
 RDEPEND=">=sci-electronics/libsigrok-0.2.0
 	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
 	>=dev-libs/glib-2.28.0
-	dev-qt/qt-meta:4
+	dev-qt/qtgui:4
 	>=dev-libs/boost-1.42"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
@@ -44,6 +44,11 @@ src_configure() {
 		mycmakeargs+=( -DSTATIC_PKGDEPS_LIBS=TRUE )
 	else
 		mycmakeargs+=( -DSTATIC_PKGDEPS_LIBS=FALSE )
+	fi
+	if use sigrokdecode; then
+		mycmakeargs+=( -DENABLE_DECODE=TRUE )
+	else
+		mycmakeargs+=( -DENABLE_DECODE=FALSE )
 	fi
 	cmake-utils_src_configure
 }
