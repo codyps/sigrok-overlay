@@ -45,10 +45,5 @@ src_configure() {
 	else
 		mycmakeargs+=( -DSTATIC_PKGDEPS_LIBS=FALSE )
 	fi
-	if use sigrokdecode; then
-		mycmakeargs+=( -DENABLE_DECODE=TRUE )
-	else
-		mycmakeargs+=( -DENABLE_DECODE=FALSE )
-	fi
 	cmake-utils_src_configure
 }
