@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-inherit eutils autotools
+PYTHON_COMPAT=( python3_{1,2,3,4} )
+inherit eutils autotools python-single-r1
 
 if [ ${PV} = 9999 ]; then
 	EGIT_REPO_URI="git://sigrok.org/${PN}"
@@ -18,16 +19,22 @@ fi
 DESCRIPTION="Library which provides (streaming) protocol decoding functionality."
 HOMEPAGE="http://sigrok.org/"
 
+
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
 # >=automake-1.11
 RDEPEND=">=dev-libs/glib-2.24.0
-	>=dev-lang/python-3"
+	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 #	>=dev-util/pkgconfig-0.22"
+
+pkg_setup () {
+	python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	if [ ${PV} = 9999 ]; then
