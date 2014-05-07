@@ -38,5 +38,12 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_with sigrokdecode libsigrokdecode)
+	my_args=()
+	# has and use_with don't work with sigrok's unique take on this
+	if use sigrokdecode
+		my_args+=(--with-libsigrokdecode=yes)
+	else
+		my_args+=(--with-libsigrokdecode=no)
+	fi
+	econf "${my_args[@]}"
 }
