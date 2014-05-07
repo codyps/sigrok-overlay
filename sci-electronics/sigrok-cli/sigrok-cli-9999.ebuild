@@ -40,7 +40,7 @@ src_prepare() {
 src_configure() {
 	my_args=()
 	# has and use_with don't work with sigrok's unique take on this
-	if use sigrokdecode
+	if use sigrokdecode; then
 		my_args+=(--with-libsigrokdecode=yes)
 	else
 		my_args+=(--with-libsigrokdecode=no)
