@@ -25,7 +25,7 @@ SLOT="0"
 IUSE="+sigrokdecode"
 
 RDEPEND=">=sci-electronics/libsigrok-0.2.0
-	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.2.0 )
+	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.3.0 )
 	>=dev-libs/glib-2.28.0"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
