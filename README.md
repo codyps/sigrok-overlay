@@ -4,6 +4,8 @@
 
   See http://wiki.gentoo.org/wiki/Layman for info on using layman.
 
+Note: I don't do any cross-version testing (trying to use older versions of sigrok-cli with a newer libsigrok, for example). If you find a dependency on a specific version, please file a bug or make a pull request to add it!
+
 * Packages (working)
   * libsigrok
   * libsigrokdecode
@@ -13,8 +15,7 @@
   * sigrok-firmware-fx2lafw
   * sigrok-firmware-fx2lafw-bin
   * libserialport
+
 * Todo
-  * sigrok-meter
   * fpgalafw
-  * meta package
 
