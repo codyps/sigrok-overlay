@@ -27,8 +27,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 #	>=dev-util/pkgconfig-0.22
 
-if [ ${PV} = 9999 ]; then
 src_prepare() {
+	if [ ${PV} = 9999 ]; then
 		eautoreconf
+	fi
 }
-fi
