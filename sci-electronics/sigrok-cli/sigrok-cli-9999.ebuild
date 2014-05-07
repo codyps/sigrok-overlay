@@ -38,5 +38,5 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_with sigrokdecode libsigrokdecode)
+	econf $(use_with sigrokdecode libsigrokdecode yes)
 }
