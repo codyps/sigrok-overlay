@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,6 @@ fi
 
 DESCRIPTION="Library which provides (streaming) protocol decoding functionality."
 HOMEPAGE="http://sigrok.org/"
-
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 LICENSE="GPL-3"
