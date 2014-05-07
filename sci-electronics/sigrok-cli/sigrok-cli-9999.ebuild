@@ -38,5 +38,12 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_with sigrokdecode libsigrokdecode yes)
+	# sigrok-cli-0.5.0's configure.ac is broken
+	if ! use sigrokdecode; then
+		# or --with-libsigrokdecode=anything_can_go_here
+		my_args=--without-libsigrokdecode
+	else
+		my_args=
+	fi
+	econf "$my_args"
 }
