@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,7 +24,7 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="+sigrokdecode"
 
-RDEPEND=">=sci-electronics/libsigrok-0.2.0
+RDEPEND=">=sci-electronics/libsigrok-0.3.0
 	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.3.0 )
 	>=dev-libs/glib-2.28.0"
 DEPEND="${RDEPEND}
@@ -35,4 +35,8 @@ src_prepare() {
 	if [ ${PV} = 9999 ]; then
 		eautoreconf
 	fi
+}
+
+src_configure() {
+	econf $(use_with sigrokdecode libsigrokdecode)
 }

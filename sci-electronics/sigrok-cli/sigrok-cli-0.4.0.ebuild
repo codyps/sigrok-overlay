@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,4 +35,8 @@ src_prepare() {
 	if [ ${PV} = 9999 ]; then
 		eautoreconf
 	fi
+}
+
+src_configure() {
+	econf $(use_with sigrokdecode libsigrokdecode)
 }
