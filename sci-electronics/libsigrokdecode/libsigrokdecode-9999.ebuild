@@ -2,9 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+# TODO: need to control detection of check and libsigrok
+#       OR just a way to disable tests
+
+
+
 EAPI=5
 
-PYTHON_COMPAT=( python3_{1,2,3,4} )
+# libsigrokdecode-0.2.0 supports python3_1 and python3_0, but those are gone
+# from portage, so we don't bother with a second ebuild
+PYTHON_COMPAT=( python3_{2,3,4} )
 inherit eutils autotools python-single-r1
 
 if [ ${PV} = 9999 ]; then
@@ -39,4 +46,9 @@ src_prepare() {
 	if [ ${PV} = 9999 ]; then
 		eautoreconf
 	fi
+}
+
+src_compile() {
+	# Bug in <= 0.3.0 trys to run tests before lib is complete if parallelization is on.
+	emake -j1
 }
