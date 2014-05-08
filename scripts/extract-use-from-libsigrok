@@ -1,0 +1,13 @@
+#! /bin/sh
+
+configure_ac=$1
+
+fst_line="^AC_ARG_ENABLE(all-drivers.*\$"
+end_line="^# Checks for libraries\\.\$"
+drivers="$(sed -n "/$fst_line/,/$end_line/p" <"$configure_ac" | grep AC_ARG_ENABLE | cut -d\( -f2 | cut -d , -f1)"
+
+echo libsigrok_drivers="$drivers"
+
+need_libserialport="$(sed -n '/\[have_libserialport="no";/,/^# Define HAVE_LIBSERIALPORT in config\.h if we found libserialport\.$/p' <"$configure_ac" \
+	| head -n -1 | tr ';' '\n' | sed '/\[have_libserialport="no"/d' | sed 's/\])//' | sed 's/="no"//' | sed 's/^[[:space:]]*HW_//' | tr '[:upper:]' '[:lower:]' | sed 's/_/-/g' )"
+echo libsigrok_need_libserialport="$need_libserialport"
