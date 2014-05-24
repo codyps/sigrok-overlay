@@ -6,7 +6,8 @@ EAPI=4
 
 #WANT_AUTOCONF="latest" # 2.63 or newer
 #WANT_AUTOMAKE="latest" # 1.11 or newer
-inherit eutils autotools
+PYTHON_COMPAT=( python3_{2,3,4} )
+inherit eutils autotools python-single-r1
 
 if [ ${PV} = 9999 ]; then
 	EGIT_REPO_URI="git://sigrok.org/${PN}"
@@ -20,16 +21,21 @@ fi
 DESCRIPTION="Command-line client for the sigrok logic analyzer software"
 HOMEPAGE="http://sigrok.org/"
 
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+sigrokdecode"
 
 RDEPEND=">=sci-electronics/libsigrok-0.3.0
-	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.3.0 )
+	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.3.0 ${PYTHON_DEPS} )
 	>=dev-libs/glib-2.28.0"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 # >=dev-util/pkgconfig-0.22
+
+pkg_setup () {
+	python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	if [ ${PV} = 9999 ]; then
