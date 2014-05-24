@@ -1,1 +1,1 @@
-libsigrokdecode-9999.ebuild
+libsigrokdecode-0.3.0.ebuild
