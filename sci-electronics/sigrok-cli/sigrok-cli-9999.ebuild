@@ -44,7 +44,7 @@ src_prepare() {
 }
 
 src_configure() {
-	# sigrok-cli-0.5.0's configure.ac is broken
+	# >=sigrok-cli-0.5.0's configure.ac is broken
 	if ! use sigrokdecode; then
 		# or --with-libsigrokdecode=anything_can_go_here
 		my_args=--without-libsigrokdecode
