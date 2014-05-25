@@ -18,7 +18,8 @@ Note: I don't do any cross-version testing (trying to use older versions of sigr
 libsigrokdecode PYTHON_SINGLE_TARGET
 ------------------------------------
 
-For libsigrokdecode, it is necessary to select a PYTHON_SINGLE_TARGET of a python3 variant
+For libsigrokdecode, it is necessary to select a PYTHON_SINGLE_TARGET of a python3 
+
 You can do this by
 
     pyver=python_single_target_python3_3
