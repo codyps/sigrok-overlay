@@ -21,9 +21,16 @@ libsigrokdecode PYTHON_SINGLE_TARGET
 For libsigrokdecode, it is necessary to select a PYTHON_SINGLE_TARGET of a python3 variant
 You can do this by
 
-    echo sci-electronics/libsigrokdecode python_single_target_python3_3 >> /etc/portage/package.use
+    pyver=python_single_target_python3_3
+    usefile=/etc/portage/package.use
+    echo sci-electronics/libsigrokdecode $pyver >> $usefile
+    # also need to set for sigrok-cli and pulseview if they use
+    # libsigrokdecode
+    echo sci-electronics/sigrok-cli $pyver >> $usefile
+    echo sci-electronics/pulseview $pyver >> $usefile
 
 Or something similar.
+
 
 
 Packages
