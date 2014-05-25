@@ -5,8 +5,6 @@
 # TODO: need to control detection of check and libsigrok
 #       OR just a way to disable tests
 
-
-
 EAPI=5
 
 # libsigrokdecode-0.2.0 supports python3_1 and python3_0, but those are gone
