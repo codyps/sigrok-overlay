@@ -18,7 +18,7 @@ fi
 DESCRIPTION="a Qt based logic analyzer GUI for sigrok."
 HOMEPAGE="http://sigrok.org/"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+REQUIRED_USE="sigrokdecode? ( ${PYTHON_REQUIRED_USE} )"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+sigrokdecode static"

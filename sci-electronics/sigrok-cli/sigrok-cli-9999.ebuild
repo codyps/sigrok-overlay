@@ -21,7 +21,7 @@ fi
 DESCRIPTION="Command-line client for the sigrok logic analyzer software"
 HOMEPAGE="http://sigrok.org/"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+REQUIRED_USE="sigrokdecode? ( ${PYTHON_REQUIRED_USE} )"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+sigrokdecode"
