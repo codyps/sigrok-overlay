@@ -4,7 +4,9 @@
 
 EAPI=5
 
-inherit eutils autotools
+PYTHON_COMPAT=( python2_7 python3_2 python3_3 python3_4 )
+
+inherit eutils autotools python-single-r1
 
 if [ ${PV} = 9999 ]; then
 	EGIT_REPO_URI="git://sigrok.org/${PN}"
@@ -20,10 +22,12 @@ HOMEPAGE="http://sigrok.org/"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+udev +alsa +usb +ftdi"
+IUSE="+udev +alsa +usb +ftdi +cxx +python"
 
 # Not encoded in RDEPEND because the virtual doesn't know about versions.
 # >=dev-libs/libusb-1.0.9
+
+REQUIRED_USE="python? ( cxx )"
 
 RDEPEND="
 	dev-libs/libserialport
@@ -36,7 +40,9 @@ RDEPEND="
 	udev? ( >=virtual/udev-151 )"
 
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	cxx? ( app-doc/doxygen sys-devel/autoconf-archive )
+	python? ( ${PYTHON_DEPS} dev-lang/swig )"
 #	>=dev-util/pkgconfig-0.22
 
 src_prepare() {
@@ -44,3 +50,12 @@ src_prepare() {
 		eautoreconf
 	fi
 }
+
+src_configure() {
+	local myconf=(
+		--disable-java
+		$(use_enable python python)
+		$(use_enable cxx cxx))	
+	econf "${myconf[@]}"
+}
+

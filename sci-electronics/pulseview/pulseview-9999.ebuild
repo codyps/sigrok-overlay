@@ -27,7 +27,7 @@ CMAKE_MIN_VERSION=2.6
 
 # >=automake-1.11
 # >=autoconf-2.63
-RDEPEND=">=sci-electronics/libsigrok-0.2.0
+RDEPEND=">=sci-electronics/libsigrok-0.2.0[cxx]
 	sigrokdecode? ( >=sci-electronics/libsigrokdecode-0.3.0 ${PYTHON_DEPS} )
 	>=dev-libs/glib-2.28.0
 	dev-qt/qtgui:4
